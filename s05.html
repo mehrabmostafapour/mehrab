@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>s05</title>
+    </head>
+    <body style="background-color: #000000;">
+        <center>
+
+        <div id="textboxContainer","textboxContainer1">
+        </div>
+        <button onclick="addTextbox(event)">شروع</button>
+      <p><br> <button>بعدی</button></br></p>
+        <hr>
+        <button> clik me</button>
+    
+
+
+        <input type="" name="testField" maxlength="50" size="30" value="text">
+
+        <script>
+            <article id ="a1">
+                <b> appent html</b><br>
+                <input id="btn1" type="button" value="ok"> </input></br>
+                </article>
+                document.getElementById("btn1").addEventListener("clik",function(){
+                    document.getElementById("a1").style.backgroundColor
+                     =document.getElementById("in1").value;
+                });
+
+        </script>
+        <script type="text/javascript">
+            function addTextbox(event) {
+                  var input = document.createElement("input");
+                  input.setAttribute("type", "text");
+                  document.getElementById("textboxContainer").appendChild(input);
+                  
+                  
+            }
+          </script>
+          
+          </center>
+    </body>
+</html>

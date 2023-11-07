@@ -1,16 +1,47 @@
-let http = require('http');
-let server = http.createServer(requestHandler);
-  server.listen(8037);
+let http=require('http');
+let server =http.createServer(requestHandler);
+server.listen(8037);
 
-let headers ={'Content-type':'text/plain'}
+console.log('server is running');
+let headers={'Content-Type':'Text/Plain'};
 
-    function requestHandler (x,response){
-     console.log('request| url:',requset.url);
-     console.log('request method:',requset.method);
-     console.log(typeof x.writeHead);
+let c=3;
+let e=2;
 
-     requset.writeHeader(200,headers);
-     requset.write('salam'+requset.url);
-     requset.end();
+let obj={
+
+    s: function(){
+
+        console.log(c+e);
+
+    },
+
+    m: function(){
+
+        console.log(c-e);
+
+    },
+
+    "favicon.ico":function(){
+
+        console.log('favicon');
+    }
+
+}
+
+function requestHandler (request, response){
     
+    console.log('request url: ', request.url);
+    console.log('request method: ', request.method);
+ 
+    let firstpart=request.url.split('/')[1];
+
+    console.log(firstpart);
+
+     obj[firstpart]();
+
+    response.writeHead(200,headers);
+    response.write('salam '+request.url);
+    response.end();
+
 }

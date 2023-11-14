@@ -31,12 +31,24 @@ let obj={
     "favicon.ico":function(){
 
         console.log('favicon');
-    }
+    },
+    xxx: html1
 
 }
-function html1 (request){
-    response.log('ths is c');
-    response.writeHead(200 , headers);
+function page2controller(response){
+    console.log('page2controller 1')
+    fs.readFile('.index.html','utf8',function(error,data);
+    console.log('page2controller2');
+    console.log('page2controller2 error')
+}
+
+
+
+
+
+function html1 (response){
+    console.log('ths is c');
+    response.writeHead(200 , headers.html);
     response.write(
         `<html>
                   <head>
@@ -44,9 +56,17 @@ function html1 (request){
                   </head>
               <body>
                   <h1>hi</h1>
+
               </body>
         <html>`
     )
+    response.end();
+}
+let routes={
+    x:funcx,
+    y:funcy,
+    page1:page1controller,
+    page2:page2controller,
 }
 
 function requestHandler (request, response){
@@ -58,10 +78,8 @@ function requestHandler (request, response){
 
     console.log(firstpart);
 
-     obj[firstpart]();
+     obj[firstpart](response);
 
-    response.writeHead(200,headers);
-    response.write('salam '+request.url);
-    response.end();
+    
 
 }
